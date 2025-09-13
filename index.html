@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単位にゃん</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 単位にゃん</h1>
+            <p>出席日数を可視化しよう！！</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('dashboard')">📊 ダッシュボード</button>
+            <button class="tab-button" onclick="showTab('subjects')">📝 科目管理</button>
+            <button class="tab-button" onclick="showTab('attendance')">📅 出席記録</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- ダッシュボード -->
+            <div id="dashboard" class="tab-pane active">
+                <div class="dashboard-overview" id="overview">
+                    <!-- 動的に生成 -->
+                </div>
+                <div id="subjectsList">
+                    <!-- 動的に生成 -->
+                </div>
+            </div>
+
+            <!-- 科目管理 -->
+            <div id="subjects" class="tab-pane">
+                <h2>📝 科目を追加</h2>
+                <form id="subjectForm">
+                    <div class="form-group">
+                        <label for="subjectName">科目名</label>
+                        <input type="text" id="subjectName" placeholder="例: 数学I" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="weeklyClasses">週何回の授業か</label>
+                        <select id="weeklyClasses" required>
+                            <option value="">選択してください</option>
+                            <option value="1">週1回</option>
+                            <option value="2">週2回</option>
+                            <option value="3">週3回</option>
+                            <option value="4">週4回</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="required">必修科目ですか？</label>
+                        <select id="required" required>
+                            <option value="">選択してください</option>
+                            <option value="true">必修</option>
+                            <option value="false">選択</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">科目を追加</button>
+                </form>
+
+                <div id="subjectsManageList" style="margin-top: 30px;">
+                    <!-- 既存科目の管理リスト -->
+                </div>
+            </div>
+
+            <!-- 出席記録 -->
+            <div id="attendance" class="tab-pane">
+                <h2>📅 欠席を記録</h2>
+                <div id="attendanceList">
+                    <!-- 動的に生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: white; font-size: 14px;">
+    <div style="margin-bottom: 10px;">
+        <strong>製作者：openmura</strong>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <a href="privacy_policy.html" style="color: white; text-decoration: underline; font-size: 14px;">📜 プライバシーポリシー</a>
+    </div>
+    <div>
+        ©openmura 2025 All rights reserved.
+    </div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
